@@ -1,5 +1,9 @@
 {% include 'header.html' %}
-
+<div class="row">
+    <div class="col-lg-3 ms-auto">
+      {{ correct }}
+    </div>
+</div>
 <div class="questions container">
   <p>{{data.question}}</p>
   {% for i in answers %}
@@ -13,11 +17,6 @@
 <div class="progress">
 	<div class="bar" style="width:{{id * 10}}%">
 		<p class="percent">{{id * 10}}%</p>
-	</div>
-</div>
-<div class="progress">
-	<div class="bar" style="width:{{correct}}%">
-		<p class="percent">{{correct}}%</p>
 	</div>
 </div>
 
