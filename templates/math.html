@@ -1,24 +1,40 @@
 {% include 'header.html' %}
-<div class="row">
-    <div class="col-lg-3 ms-auto">
-      {{ correct }}
+<div class="container">
+    <div class="row quiz">
+        <div class="col-6">
+            <p class="questions">{{data.question}}</p><br>
+            {% if id == 10 %}
+            {% for i in answers %}
+            <form action="{{ url_for('bla') }}" method="post">
+                <input type="radio" class="form-check-input radio-buttons" id='bla' name="options" value={{i}}>
+                <label style="font-size:1.5rem;" for='bla'>{{ i }}</label><br>
+                {% endfor %}
+                <button class='btn-lg btn-primary mt-3'>Finish</button>
+            </form>
+
+            {% else %}
+            {% for i in answers %}
+            <form action="{{ url_for('maths') }}" method="post">
+                <input type="radio" class="form-check-input radio-buttons" id=i name="options" value={{i}}>
+                <label style="font-size:1.5rem;" for=i>{{ i }}</label><br>
+                {% endfor %}
+                <button class='btn-lg btn-primary mt-3'>Next</button>
+                {% endif %}
+            </form>
+
+        </div>
+        <div class="col-6 pl-5">
+            <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+            <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_ecsh092g.json" background="transparent"
+                           speed="1" style="width: 400px; height: 400px;" loop autoplay></lottie-player>
+        </div>
     </div>
 </div>
-<div class="questions container">
-  <p>{{data.question}}</p>
-  {% for i in answers %}
-  <form action="{{ url_for('maths') }}" method="post">
-  <input type="radio" class="form-check-input" id=i name="options" value={{i}}>
-  <label for=i>{{ i }}</label><br>
-  {% endfor %}
-  <button class='btn btn-primary mt-3'>Next</button>
-  </form>
-</div>
+
+
 <div class="progress">
-	<div class="bar" style="width:{{id * 10}}%">
-		<p class="percent">{{id * 10}}%</p>
-	</div>
+    <div class="bar" style="width:{{id * 10}}%">
+        <p class="percent">{{id * 10}}%</p>
+    </div>
 </div>
-
-
 {% include 'footer.html' %}

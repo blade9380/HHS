@@ -1,5 +1,67 @@
-{% include 'header.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>EFA MM</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script>
+	$(document).ready(function(){
+		$("#myModal").modal('show');
+	});
 
-bla bla
 
-{% include 'footer.html' %}
+
+
+
+
+    </script>
+</head>
+<body>
+<div id="myModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Your score is...</h5>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+
+                    {% if point > 5 %}
+
+                    <audio autoplay>
+                        <source src="../static/mixkit-correct-answer-reward-952.mp3" type="audio/mpeg">
+                    </audio>
+                    <div class="col-6">
+                        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+                        <lottie-player src="https://assets4.lottiefiles.com/temp/lf20_hT22rr.json"
+                                       background="transparent" speed="1" style="width: 200px; height: 200x;" loop
+                                       autoplay></lottie-player>
+                    </div>
+                    {% else %}
+                    <audio autoplay>
+                        <source src="../static/mixkit-wrong-answer-fail-notification-946.mp3" type="audio/mpeg">
+                    </audio>
+                    <div class="col-6">
+                        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+                        <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_4jsnlwpe.json"
+                                       background="transparent" speed="1" style="width: 300px; height: 300px;" loop
+                                       autoplay></lottie-player>
+                    </div>
+                    {% endif %}
+
+                    <div class="col-6 ms-auto pl-5 pt-5">
+                        <p style="font-size: 80px;">{{ point }}/10</p>
+                    </div>
+                </div>
+            </div>
+            <a class="btn btn-primary" href="{{url_for('home')}}">Back to Home</a>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>

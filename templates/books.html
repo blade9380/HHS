@@ -1,0 +1,20 @@
+{% include "header.html" %}
+<section id="tech-books">
+<h3>These are Books from IT books  and you can get free download from there!</h3>
+<div class="d-flex align-items-column box ms-5 text-start container row my-5">
+  {% for i in data %}
+  <div class="books-card col-lg-4 col-md-6">
+    <div class="card" style="width: 18rem;">
+    <img src="{{ i['image'] }}" class="card-img-top" alt="Book Cover">
+    <div class="card-body">
+    <h5 class="card-title">{{ i['title'] }}</h5>
+    <p class="card-text">{{ i['subtitle'] }}</p>
+    <a href="{{ i['url'] }}" class="btn btn-primary">Read</a>
+</div>
+  </div>
+
+</div>
+  {% endfor %}
+</div>
+</section>
+{% include "footer.html" %}

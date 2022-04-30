@@ -72,3 +72,46 @@ input {
   font-size:12px;
   color:white;
 }
+
+.questions {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.card-box {
+
+    display: flex;
+    width: 18rem;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+#books-section {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.box {
+    margin-left: auto;
+    margin-right: auto;
+}
+.card {
+    height: 100%;
+    border-radius: 5%;
+}
+
+.books-card {
+    margin: 20px 0px 0 0;
+}
+#tech-books {
+    text-align: center;
+}
+h3 {
+margin: 6% 0 0 6%;
+}
+
+
+
