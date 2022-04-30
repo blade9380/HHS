@@ -1,0 +1,25 @@
+{% include 'header.html' %}
+
+<div class="questions container">
+  <p>{{data.question}}</p>
+  {% for i in answers %}
+  <form action="{{ url_for('maths') }}" method="post">
+  <input type="radio" class="form-check-input" id=i name="options" value={{i}}>
+  <label for=i>{{ i }}</label><br>
+  {% endfor %}
+  <button class='btn btn-primary mt-3'>Next</button>
+  </form>
+</div>
+<div class="progress">
+	<div class="bar" style="width:{{id * 10}}%">
+		<p class="percent">{{id * 10}}%</p>
+	</div>
+</div>
+<div class="progress">
+	<div class="bar" style="width:{{correct}}%">
+		<p class="percent">{{correct}}%</p>
+	</div>
+</div>
+
+
+{% include 'footer.html' %}
