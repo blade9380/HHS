@@ -1,8 +1,8 @@
 {% include 'header.html' %}
 <div class="container">
-    <div class="row quiz">
+    <div class="row quiz pt-5">
         <div class="col-6">
-            <p class="questions">{{data.question}}</p><br>
+            <p style='font-family:  "Poppins", sans-serif; font-size: 1.5rem; font-weight: 700;'class="questions_item">{{data.question}}</p><br>
             {% if id == 10 %}
             {% for i in answers %}
             <form action="{{ url_for('bla') }}" method="post">

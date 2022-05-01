@@ -1,5 +1,5 @@
 body {
-    background-color: #D7E5F0 ;
+    background-color: #D7E5F0;
 }
 
 footer {
@@ -26,20 +26,14 @@ footer {
 a {
     text-decoration: none;
 }
-.easy {
-    text-decoration: none;
-    color: #0D6EFD;
-}
-
-a:hover {
-    color: white;
-}
 
 .questions {
+    color: 'red';
     margin-top: 10%;
     font-family:  "Poppins", sans-serif;
-    font-size: 1.7rem;
+    font-size: 1rem;
 }
+
 input {
     font-size: 1.2rem;
 }

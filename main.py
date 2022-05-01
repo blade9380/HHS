@@ -91,5 +91,10 @@ def books():
     return render_template('books.html', data=free)
 
 
+@app.route('/hangman')
+def hangman():
+    return render_template('hangman.html')
+
+
 if __name__ == '__main__':
     app.run(debug=True)
